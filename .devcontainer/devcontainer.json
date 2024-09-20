@@ -1,0 +1,14 @@
+{
+	// For format details, see https://aka.ms/vscode-remote/devcontainer.json
+	"name": "Node.js",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome"
+			]
+		}
+	}
+}

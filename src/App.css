@@ -115,7 +115,7 @@
 	font-size: 1.2rem;
 	word-break: break-all; /* 単語単位で折り返し */
 	overflow-wrap: anywhere; /* 必要に応じて折り返す */
-	text-align: right; /* 右揃え */
+	text-align: center; /* 右揃え */
 	width: 100%; /* 幅が余裕のある場合に対応 */
 }
 

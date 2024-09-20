@@ -1,42 +1,170 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* コンテナのレイアウト調整 */
+.lottery-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f5f5f5;
+	padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ボタンの配置 */
+.preset-buttons-container {
+	display: flex;
+	justify-content: center;
+	gap: 10px; /* ボタン間にスペースを追加 */
+	margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.preset-buttons-container button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	background-color: #1a73e8;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.preset-buttons-container button:hover {
+	background-color: #1558a2;
 }
 
-.card {
-  padding: 2em;
+/* ボタンのスタイル */
+.generate-button {
+	background-color: #1a73e8;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-bottom: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.generate-button:hover {
+	background-color: #1558a2;
+}
+
+.generate-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+/* 当たりUUIDのボックス */
+.winning-uuid-box {
+	background-color: #ffeb3b;
+	padding: 10px 30px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	width: 100%;
+	max-width: 70vw;
+}
+
+/* 当たりUUIDのスタイル */
+.winning-uuid {
+	margin: 10px;
+	font-size: 2.5rem;
+	font-family: "Courier New", Courier, monospace;
+	color: #333;
+	word-break: break-all;
+}
+
+/* 結果表示のコンテナ */
+.results-container {
+	display: flex;
+	flex-direction: column; /* 縦に並べる */
+	align-items: center;
+	width: 100%;
+	max-width: 70vw;
+}
+
+/* UUIDボックスのスタイル */
+.uuid-box {
+	background-color: #ffffff;
+	padding: 5px 25px;
+	margin: 5px 0;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	width: 100%;
+	animation: fadeIn 0.5s ease-in-out; /* フェードインアニメーション */
+}
+/* UUIDと番号のスタイル */
+.uuid-row {
+	display: flex;
+	justify-content: space-between; /* 番号を左、UUIDを右端に */
+	align-items: center;
+	width: 100%;
+}
+
+/* 番号のスタイル */
+.uuid-index {
+	font-weight: bold;
+	font-size: 1.2rem;
+	white-space: nowrap; /* 折り返さずに表示 */
+}
+
+/* UUIDのスタイル（折り返し対応） */
+.uuid {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.2rem;
+	word-break: break-all; /* 単語単位で折り返し */
+	overflow-wrap: anywhere; /* 必要に応じて折り返す */
+	text-align: right; /* 右揃え */
+	width: 100%; /* 幅が余裕のある場合に対応 */
+}
+
+/* 一致部分の強調表示 */
+.matched {
+	color: #fff;
+	background-color: #4caf50;
+	animation: flash 0.8s ease-in-out infinite alternate; /* 一致した文字がフラッシュ */
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* フラッシュアニメーション */
+@keyframes flash {
+	0% {
+		background-color: #4caf50;
+		transform: scale(1);
+	}
+	100% {
+		background-color: #66bb6a;
+		transform: scale(1.1);
+	}
+}
+
+/* トップに戻るボタンのスタイル */
+.scroll-top-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #1a73e8;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-button:hover {
+	background-color: #1558a2;
 }
